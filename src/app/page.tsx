@@ -5,11 +5,24 @@ function LinkCard({ href, title, image }: { href: string, title: string, image?:
   return (
     <a 
       href={href} 
-      className="flex items-center p-4 rounded-md w-full 
-      hover:shadow-xl transition-all duration-300 border mb-3"
+      className="flex items-center p-1 w-full rounded-md 
+      hover:shadow-xl hover:scale-105 transition-all 
+      duration-300 bg-gray-100 mb-3"
     >
-      <div className="flex flex-col">
-        <h2 className="font-bold text-lg">{title}</h2>
+      <div className="flex text-center w-full">
+        <div className="w-10 h-10">
+          { image ? (
+          <Image
+            className="rounded"
+            alt={title}
+            src={image}
+            width={40}
+            height={40}
+          />
+          ) : null }
+        </div>
+        <h2 className="flex items-center justify-center font-semibold w-full text-center 
+        text-gray-600 -ml-10">{title}</h2>
       </div>
     </a>
   )
