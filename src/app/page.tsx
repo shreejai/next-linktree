@@ -77,6 +77,14 @@ function LinkCard({ href, title, image }: { href: string, title: string, image?:
   )
 }
 
+function SocialLinks(){
+  return (
+    <a href="">
+
+    </a>
+  )
+}
+
 export default function Home() {
   return (
     <div className="flex flex-col items-center w-full max-auto justify-center mt-16 px-8">
@@ -95,14 +103,25 @@ export default function Home() {
       <div className="flex gap-4 items-center mt-8">
         {data.socials.map( (link) => {
           if (link.href.includes('twitter')) {
-            return <TwitterIcon />
+            return (
+              <a key={link.href} href={link.href}>
+                <TwitterIcon />
+              </a>
+            )
           }
           if (link.href.includes('github')) {
-            return <GitHubIcon />
+            return (
+              <a key={link.href} href={link.href}>
+                <GitHubIcon />
+              </a>
+            )
           }
         })}
       </div>
       
+      <div className="mt-8">
+        Linktree Demo
+      </div>
 
     </div>
   );
